@@ -14,6 +14,8 @@ Let’s say you have MREPO and wanted to set up a RedHat 6 repository.  The key 
 
 This command actually logs into RedHat’s RHN, and “registers” the server with RHN.  And now that this fake-server component of MREPO is now allowed to access RedHat’s updates, it can begin mirroring the repository.  If you log into RedHat’s RHN, you will see a “registered server” that looks something like this:
 
+![Redhat RHN registered server screen](https://github.com/ThomasWunderlich/test/blob/master/registeredserver.png "Redhat RHN registered server screen")
+
 ## IF IT AIN’T BROKE, DON’T FIX IT, RIGHT?
 
 So what’s the issue?  For you RedHat customers, if you’re still using RHN in any capacity, you hopefully have also seen this notice by now:
