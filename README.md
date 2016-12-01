@@ -129,3 +129,8 @@ The number of worker processes to use.   This is super handy for repositories th
 *--update*
 
 Do an “update” versus a full new repo.   This drastically cuts down on the I/O needed to create the final resulting metadata.
+
+## SUMMARY
+The main point of this SysAdvent article was to help those using MREPO today to wrap their head around REPOSYNC, and (no thanks to RedHat), why you NEED to move away from MREPO to something else like REPOSYNC if you’re an RHN user.  My goal was to provide some simple examples and to provide understanding how it works.
+
+If you do not actually have official RedHat servers (for example, you only have CentOS etc.), you may be able to keep using MREPO for quite some time, despite that the tool has not had any active development in years.   Clearly, a large part of MREPO’s functionality will break after 7/31/2017.  Regardless of whether you’re using RedHat or CentOS, REPOSYNC is in my opinion an excellent and really simple alternative to MREPO.  The only downside is you need multiple servers (one for each OS version), but virtualization helps keep that down to a minimal expense.
