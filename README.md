@@ -58,3 +58,47 @@ The resulting directory structure will look like this:
 `-- rhel-6-server-rpms
     `-- Packages
 ```
+
+If you point your web browser to http://repohost/rhel-6-server-rpms/Packages, you should see all of your packages.    
+
+Use RedHat’s management portal to add this same server to RedHat’s “Optional packages” channel.  For my example, I also installed the EPEL repository to my yum environment  (reference: https://fedoraproject.org/wiki/EPEL).  
+
+With the server now ‘subscribed’ to more stuff (RedHat’s optional channel and EPEL), a subsequent reposync command like performed above now generates the following:
+
+```
+/var/www/html
+|-- epel
+|-- rhel-6-server-optional-rpms
+|   `-- Packages
+`-- rhel-6-server-rpms
+    `-- Packages
+```
+
+Note: EPEL is a simpler repo, it does not use a “Packages” subdirectory.
+
+Hopefully this all makes sense now.  The reposync command examines what repositories your server belongs to, and downloads them.    **Reminder**:  you need one ‘reposync’ server for each major operating system version you have, because each server can only download RPMs and updates specific to the version of the operating system the server is running.
+
+# WHAT’S NEXT?
+One more step, actually.  A repository directory full of RPM files is only the first of two pieces.  The second is the metadata.  The repository metadata is set up using the “createrepo” command.  The output of this will be a “repodata” subdirectory containing critical files YUM requires to sort things out when installing packages.
+
+Using a simple example and our first repository from above, let’s create the metadata:
+
+```/usr/bin/createrepo /var/www/html/rhel-6-server-rpms/Packages```
+
+After which our directory structure now looks like this:
+
+```
+/var/www/html
+|-- epel
+|-- rhel-6-server-optional-rpms
+|   `-- Packages
+`-- rhel-6-server-rpms
+    `-- Packages
+        `-- repodata
+```
+
+You will need to repeat the createrepo command for each of the individual repositories you have.   Each time you use reposync, it should be followed by a subsequent execution of createrepo.   The final step in all of this to keep current is the addition of cron job entries that usually run reposync and createrepo every night.
+
+# THINGS I LEARNED
+Both reposync and createrepo have several command options.   Here are some key options that I found useful and explanations as to when or why to use them.
+
