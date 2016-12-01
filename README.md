@@ -14,13 +14,13 @@ Let’s say you have MREPO and wanted to set up a RedHat 6 repository.  The key 
 
 This command actually logs into RedHat’s RHN, and “registers” the server with RHN.  Now that this fake-server component of MREPO is  allowed to access RedHat’s updates, it can begin mirroring the repository.  If you log into RedHat’s RHN, you will see a “registered server” that looks something like this:
 
-![Redhat RHN registered server screen](https://github.com/ThomasWunderlich/test/blob/master/registeredserver.png "Redhat RHN registered server screen")
+![Redhat RHN registered server screen](registeredserver.png "Redhat RHN registered server screen")
 
 ## IF IT AIN’T BROKE, DON’T FIX IT, RIGHT?
 
 So what’s the issue?  For you RedHat customers, if you’re still using RHN in any capacity, you hopefully have seen this notice by now:
 
-![Redhat RHN warning](https://github.com/ThomasWunderlich/test/blob/master/RNHWarning.png "Redhat RHN reaches end of service life July 31, 2017")
+![Redhat RHN warning](RNHWarning.png "Redhat RHN reaches end of service life July 31, 2017")
 
 Putting this all together:  If you’re using MREPO to get updates for RedHat servers, that process is going to totally break in just over 7 months.  **MREPO’s functionality for RedHat updates depends on RedHat’s RHN, which goes away July 31st.**
 
