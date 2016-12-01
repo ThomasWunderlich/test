@@ -30,7 +30,7 @@ Finally, while MREPO is still used widely, it is worth noting that it appears co
 
 Reposync is a command-line utility that’s included with RedHat-derived systems as part of the yum-utils RPM package.   The beauty of reposync is its simplicity.  At the core, an execution of reposync will examine all of the repositories that the system you’re running it on has available, and downloads all of the included packages to local disk.  Technically, reposync has no configuration.  You run it, and then it downloads stuff.  MREPO on the other hand, requires a bit of configuration and customization per repository.
 
-# HOW DOES REPOSYNC SOLVE THE PROBLEM OF RHN DISAPPEARING?
+## HOW DOES REPOSYNC SOLVE THE PROBLEM OF RHN DISAPPEARING?
 You simply have to think about the setup differently.   In our old model, we had one server that acted as the master repository for all things, whether it was RedHat 6, CentOS 7, whatever.  This one system was “registered”, multiple times, to mirror RPMS for multiple operating system variants and versions.
 
 In the new model, we have to divide things up.   You will need one dedicated server per operating system version.   This is because any given server can only download RPMs specific to the operating system version that server is running.  (Fortunately with today’s world of hosting virtual machines, this isn’t an awful setup, it’s actually quite elegant).    In my case, I needed a dedicated server for each of:   RedHat 6, RedHat 7, CentOS 6, and CentOS 7.
