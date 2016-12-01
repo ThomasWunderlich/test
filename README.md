@@ -20,6 +20,8 @@ This command actually logs into RedHat’s RHN, and “registers” the server w
 
 So what’s the issue?  For you RedHat customers, if you’re still using RHN in any capacity, you hopefully have also seen this notice by now:
 
+![Redhat RHN warning](https://github.com/ThomasWunderlich/test/blob/master/RNHWarning.png "Redhat RHN reaches end of service life July 31, 2017")
+
 Putting this all together:  If you’re using MREPO to get updates for RedHat servers, that process is going to totally break in just over 7 months.  **MREPO’s functionality for RedHat updates depends on RedHat’s RHN, which goes away July 31st.**
 
 Finally, while MREPO is still used widely, it is worth noting that it appears continued development of MREPO ceased over four years ago.    There have been a scattering of forum posts out there that mention trying to get MREPO to work with RedHat’s new subscription-management facility, but I never found a documented solution that works.
