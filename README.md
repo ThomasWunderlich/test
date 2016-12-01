@@ -102,3 +102,30 @@ You will need to repeat the createrepo command for each of the individual reposi
 # THINGS I LEARNED
 Both reposync and createrepo have several command options.   Here are some key options that I found useful and explanations as to when or why to use them.
 
+### REPOSYNC
+
+*--download-metadata*
+
+This downloads not only the RPMS, but also extra metadata that may be useful, most important of which is an xml file that contains version information as relates to updates  This totally depends on the particular repository you’re syncing.
+
+*--downloadcomps*
+
+Also download the comps.xml file.  The comps.xml file is critical to deal with “grouping” of packages (example “yum groupinstall Development-tools” will not function unless the repository has that file).
+
+*--newest-only*
+
+Only download the latest versions of each RPM.    This may or may not be useful, depending on whether you only want the absolute newest of everything, or whether you want ALL versions of everything.
+
+### CREATEREPO
+
+*--groupfile*
+
+If you have a comps.xml file for your repository, you need to tell createrepo exactly where it is.   
+
+*--workers  N*
+
+The number of worker processes to use.   This is super handy for repositories that have thousands and thousands of packages.     It speeds up the createrepo process significantly.
+
+*--update*
+
+Do an “update” versus a full new repo.   This drastically cuts down on the I/O needed to create the final resulting metadata.
