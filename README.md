@@ -10,6 +10,6 @@ While mirroring CentOS with MREPO is fairly trivial, mirroring RedHat updates re
 
 Let’s say you have MREPO and wanted to set up a RedHat 6 repository.  The key part of this process uses the “gensystemid” command, something like this:
 
-gensystemid -u RHN_username -p RHN_password --release=6Server --arch=x86_64 /srv/mrepo/src/6Server-x86_64/
+```gensystemid -u RHN_username -p RHN_password --release=6Server --arch=x86_64 /srv/mrepo/src/6Server-x86_64/```
 
 This command actually logs into RedHat’s RHN, and “registers” the server with RHN.  And now that this fake-server component of MREPO is now allowed to access RedHat’s updates, it can begin mirroring the repository.  If you log into RedHat’s RHN, you will see a “registered server” that looks something like this:
