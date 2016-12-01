@@ -35,3 +35,26 @@ For the RedHat servers, the elegant part of this solution deals with the fact th
 
 # SIMPLE REPOSYNC EXAMPLE
 The best way for you to see how reposync works is to try it out.   For this example, I highly recommend starting with a fresh new server.    Because I want to show the changes that occur with subscribing the server to extra channel(s), I am using RedHat 6.     (You are welcome to use CentOS but note the directory names created will be different and by default the server will already be subscribed to the ‘extras’ channel)
+
+For my example, perform the following steps to set up a basic reposync environment:  
+*	Install a new server with RedHat6.   A “Basic” install is best.
+*	Register the server with RedHat via the subscription-manager command.   
+*	Do NOT yet add this server to any other RedHat channels
+*	Do NOT yet install any extra repositories like EPEL.
+*	Install the following packages via YUM:     yum-utils, httpd
+*	Remove /etc/httpd/conf.d/welcome.conf (The repository will not have an index web page, so by removing this, you’re not redirected to a default apache error document)
+*	Ensure the system’s firewall is set so that you can reach this server via a web browser
+
+The simplest form of the reposync command will download all packages from all channels your system is subscribed to, and place them in a directory of your choosing.
+
+The following command will download thousands of packages and build a full local RedHat repository, including updates:
+
+```/usr/bin/reposync  --download_path=/var/www/html```
+
+The resulting directory structure will look like this:
+
+```
+/var/www/html
+`-- rhel-6-server-rpms
+    `-- Packages
+```
