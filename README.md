@@ -2,7 +2,7 @@
 Kent C. Brodie
 
 ## BACKGROUND
-We are a RedHat shop (in my case, many CentOS servers, and some RedHat as well).  To support the system updates around all of that I currently use MREPO, an open source repository mirroring tool created by Dag Wieers.  MREPO is an excellent YUM repository manager that has the ability to house, manage, and mirror multiple repositories.  Sadly for many, MREPO’s days are numbered.  Today, I’m going to cover both how to migrate from MREPO to REPOSYNC and WHY.  REPOSYNC is a simpler alternative that is built into RedHat and CentOS systems.
+We are a RedHat shop (in my case, many CentOS servers, and some RedHat as well).  To support the system updates around all of that I currently use MREPO, an open source repository mirroring tool created by Dag Wieers.  MREPO is an excellent YUM repository manager that has the ability to house, manage, and mirror multiple repositories.  Sadly for many, MREPO’s days are numbered.  Today, I’m going to cover both how to migrate from MREPO to REPOSYNC and why.  REPOSYNC is a simpler alternative that is built into RedHat and CentOS systems.
 
 For me,  MREPO has thus far done the job well.  It allows you to set up and synchronize multiple repositories all on the same single server.  In my case, I have been mirroring RedHat 6/7, and Centos 6/7 and it has always worked great.  I’ve had this setup for years, dating back to RedHat 5.
 
@@ -135,6 +135,6 @@ The number of worker processes to use.   This is super handy for repositories th
 Do an “update” versus a full new repo.   This drastically cuts down on the I/O needed to create the final resulting metadata.
 
 ## SUMMARY
-The main point of this SysAdvent article was to help those using MREPO today to wrap their head around REPOSYNC, and (no thanks to RedHat), why you NEED to move away from MREPO to something else like REPOSYNC if you’re an RHN user.  My goal was to provide some simple examples and to provide understanding how it works.
+The main point of this SysAdvent article was to help those using MREPO today to wrap their head around REPOSYNC, and (no thanks to RedHat), why you **need** to move away from MREPO to something else like REPOSYNC if you’re an RHN user.  My goal was to provide some simple examples and to provide understanding how it works.
 
 If you do not actually have official RedHat servers (for example, you only have CentOS etc.), you may be able to keep using MREPO for quite some time, despite that the tool has not had any active development in years.   Clearly, a large part of MREPO’s functionality will break after 7/31/2017.  Regardless of whether you’re using RedHat or CentOS, REPOSYNC is in my opinion an excellent and really simple alternative to MREPO.  The only downside is you need multiple servers (one for each OS version), but virtualization helps keep that down to a minimal expense.
