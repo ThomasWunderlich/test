@@ -2,7 +2,7 @@
 Kent C. Brodie
 
 ## BACKGROUND
-We are a RedHat shop (in my case, many CentOS servers, and some RedHat as well).  To support the system updates around all of that I currently use MREPO, an open source repository mirroring tool created by Dag Wieers.  MREPO is an excellent YUM repository manager that has the ability to house, manage, and mirror multiple repositories.  Sadly for many, MREPO’s days are numbered.  Today, I’m going to cover both how to migrate from MREPO to REPOSYNC and why.  REPOSYNC is a simpler alternative that is built into RedHat and CentOS systems.
+We are a RedHat shop (in my case, many CentOS servers, and some RedHat as well).  To support the system updates around all of that I currently use MREPO, an open source repository mirroring tool created by Dag Wieers.  MREPO is an excellent yum repository manager that has the ability to house, manage, and mirror multiple repositories.  Sadly for many, MREPO’s days are numbered.  Today, I’m going to cover both how to migrate from MREPO to REPOSYNC and why.  REPOSYNC is a simpler alternative that is built into RedHat and CentOS systems.
 
 For me,  MREPO has thus far done the job well.  It allows you to set up and synchronize multiple repositories all on the same single server.  In my case, I have been mirroring RedHat 6/7, and Centos 6/7 and it has always worked great.  I’ve had this setup for years, dating back to RedHat 5.
 
@@ -65,7 +65,7 @@ The resulting directory structure will look like this:
 
 If you point your web browser to http://repohost/rhel-6-server-rpms/Packages, you should see all of your packages.    
 
-Use RedHat’s management portal to add this same server to RedHat’s “Optional packages” channel.  For my example, I also installed the EPEL repository to my yum environment  (reference: https://fedoraproject.org/wiki/EPEL).  
+Use RedHat’s management portal to add this same server to RedHat’s “Optional packages” channel.  For my example, I also installed the [EPEL](https://fedoraproject.org/wiki/EPEL) repository to my yum environment.  
 
 With the server now ‘subscribed’ to more stuff (RedHat’s optional channel and EPEL), a subsequent reposync command like performed above now generates the following:
 
