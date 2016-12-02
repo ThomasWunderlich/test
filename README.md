@@ -63,7 +63,7 @@ The resulting directory structure will look like this:
     `-- Packages
 ```
 
-If you point your web browser to http://repohost/rhel-6-server-rpms/Packages, you should see all of your packages.    
+If you point your web browser to [http://repohost/rhel-6-server-rpms/Packages](http://repohost/rhel-6-server-rpms/Packages), you should see all of your packages.    
 
 Use RedHat’s management portal to add this same server to RedHat’s “Optional packages” channel.  For my example, I also installed the [EPEL](https://fedoraproject.org/wiki/EPEL) repository to my yum environment.  
 
