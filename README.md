@@ -2,7 +2,7 @@
 Kent C. Brodie
 
 ## BACKGROUND
-We are a RedHat shop (in my case, many CentOS servers, and some RedHat as well).  To support the system updates around all of that I currently use [mrepo](http://dag.wiee.rs/home-made/mrepo/), an open source repository mirroring tool created by Dag Wieers.  Mrepo is an excellent yum repository manager that has the ability to house, manage, and mirror multiple repositories.  Sadly for many, mrepo’s days are numbered.  Today, I’m going to cover both how to migrate from mrepo to reposync and why.  Reposync is a simpler alternative that is built into RedHat and CentOS systems.
+We are a RedHat shop (in my case, many CentOS servers, and some RedHat as well).  To support the system updates around all of that I currently use [mrepo](http://dag.wiee.rs/home-made/mrepo/), an open source repository mirroring tool created by Dag Wieers.  Mrepo is an excellent yum repository manager that has the ability to house, manage, and mirror multiple repositories.  Sadly for many, mrepo’s days are numbered.  Today, I’m going to cover why you may need to move from using mrepo, and how to use reposync in its place.
 
 For me,  mrepo has thus far done the job well.  It allows you to set up and synchronize multiple repositories all on the same single server.  In my case, I have been mirroring RedHat 6/7, and Centos 6/7 and it has always worked great.  I’ve had this setup for years, dating back to RedHat 5.
 
